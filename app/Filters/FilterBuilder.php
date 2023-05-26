@@ -29,14 +29,14 @@ class FilterBuilder
     {
         $this->builder = $query;
         foreach (request()->all() as $key => $operator) {
-            if (strpos($key, 'operator')) {
+            if (isset($filter) && strpos($key, 'operator')) {
                 $this->attributes[$key] = sanitize_data($operator);
             }
         }
 
         foreach (request()->all() as $key => $filter) {
             $method_name = Str::camel($key);
-            if (method_exists($this, $method_name) && !strpos($key, 'operator')) {
+            if (isset($filter) && method_exists($this, $method_name) && !strpos($key, 'operator')) {
                 call_user_func_array([$this, $method_name], array_filter([sanitize_data($filter)]));
             }
         }
