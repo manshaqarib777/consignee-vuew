@@ -10,6 +10,12 @@ class SidebarComposer
     {
         $view->with(['data' => [
             [
+                'icon' => 'pie-chart',
+                'url' => '/admin/dashboard',
+                'name' => __t('dashboard'),
+                'permission' => authorize_any(['view_default', 'view_academy', 'view_ecmommerce', 'view_hospital', 'view_hrm']),
+            ],
+            [
                 'id' => 'dashboard-samples',
                 'icon' => 'pie-chart',
                 'name' => __t('dashboard'),

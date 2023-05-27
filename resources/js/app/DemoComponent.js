@@ -64,4 +64,5 @@ Vue.component('task-add-edit-modal', require('./Components/Views/Demo/Pages/kanb
 
 // Demo Crud
 Vue.component('app-demo-crud', require('./Components/Views/Demo/Tables/demo-crud/Index').default);
+Vue.component('consignee', require('./Components/Views/Demo/Tables/consignee/Index').default);
 Vue.component('app-add-modal', require('./Components/Views/Demo/Tables/demo-crud/AddModal').default);
