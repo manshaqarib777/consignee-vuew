@@ -19,6 +19,9 @@ Route::get('/get-basic-setting-data', [SettingsApiController::class, 'getBasicSe
 Route::group(['middleware' => ['auth', 'authorize']], function () {
     include_route_files(__DIR__ . '/app/');
 });
+Route::group(['middleware' => ['auth', 'authorize']], function () {
+    include_route_files(__DIR__ . '/consignee/');
+});
 
 Route::get("doc/core/components", [DocumentationController::class,'index']);
 Route::get("doc/core/components/{component_name}", [DocumentationController::class,'show']);

@@ -27,7 +27,7 @@ class ConsigneeNotification extends BaseNotification implements ShouldQueue
     {
         $this->mailView = 'tables.advance-datatable';
         $this->databaseNotificationUrl = route(config('notification.datatable_front_end_route_name'), [
-            'crud' => $this->model->id
+            'consignee' => $this->model->id
         ]);
 
         $this->mailSubject = $this->template()->mail()->parseSubject([

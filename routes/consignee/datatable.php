@@ -1,17 +1,11 @@
 <?php
 
-use App\Http\Controllers\App\Crud\CrudController;
-use App\Http\Controllers\App\DatatableController;
+use App\Http\Controllers\App\Consignee\ConsigneeController;
 
-Route::view('/datatable', 'tables.datatable');
+Route::group(['prefix' => 'consignees'], function () {
 
-Route::group(['prefix' => 'tables'], function () {
-
-    Route::get('/functional', [CrudController::class, 'view'])
-        ->name('functional');
+    Route::get('/view', [ConsigneeController::class, 'view'])
+        ->name('view');
         
 });
-
-Route::resource('crud', CrudController::class);
-
-Route::get('/datatable/name', [CrudController::class, 'getNameFromDatatable']);
+Route::resource('consignee', ConsigneeController::class);

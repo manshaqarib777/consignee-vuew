@@ -8,7 +8,7 @@
             <app-overlay-loader v-if="preloader"/>
             <form class="mb-0"
                   :class="{'loading-opacity': preloader}"
-                  ref="form" :data-url='selectedUrl ? `crud/${inputs.id}` : `crud`'>
+                  ref="form" :data-url='selectedUrl ? `consignee/${inputs.id}` : `consignee`'>
                 <div class="form-group row align-items-center">
                     <label for="inputs_name" class="col-sm-3 mb-0">
                         {{ $t('name') }}
@@ -106,7 +106,7 @@
                     {id: 'female', value: "Female"},
                     {id: 'other', value: "Other"},
                 ],
-                modalId: 'demo-add-edit-Modal',
+                modalId: 'consignee-Modal',
                 modalTitle: this.$t('add'),
             }
         },

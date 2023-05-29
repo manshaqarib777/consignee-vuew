@@ -18,14 +18,14 @@
 
         <app-table :id="tableId" :options="options" @action="getListAction"/>
 
-        <app-add-modal v-if="isAddEditModalActive"
+        <consignee-modal v-if="isAddEditModalActive"
                        :table-id="tableId"
                        :selected-url="selectedUrl"
                        @close-modal="closeAddEditModal"/>
 
         <app-delete-modal v-if="deleteConfirmationModalActive"
                                 :preloader="deleteLoader"
-                                modal-id="demo-delete"
+                                modal-id="consignee-delete"
                                 @confirmed="confirmed"
                                 @cancelled="cancelled"/>
     </div>
@@ -49,7 +49,7 @@
                 tableId: 'consignee-table',
                 rowData: {},
                 options: {
-                    url: actions.DATATABLE_DATA,
+                    url: actions.CONSIGNEE_DATA,
                     name: this.$t('demo_crud'),
                     datatableWrapper: false,
                     showHeader: true,
@@ -59,15 +59,15 @@
                             title: this.$t('edit'),
                             icon: 'edit',
                             type: 'none',
-                            component: 'app-add-modal',
-                            modalId: 'demo-add-edit-Modal',
+                            component: 'consignee-modal',
+                            modalId: 'consignee-modal',
 
                         }, {
                             title: this.$t('delete'),
                             icon: 'trash',
                             type: 'none',
                             component: 'app-confirmation-modal',
-                            modalId: 'demo-delete',
+                            modalId: 'consignee-delete',
                         }
                     ],
                     showFilter: false,
@@ -96,7 +96,7 @@
              * for close add edit modal
              */
             closeAddEditModal() {
-                $("#demo-add-edit-Modal").modal('hide');
+                $("#consignee-modal").modal('hide');
                 this.isAddEditModalActive = false;
                 this.reSetData();
             },
@@ -112,7 +112,7 @@
 
                     this.openDeleteModal();
                 } else if (actionObj.title == this.$t('edit')) {
-                    this.selectedUrl = `${actions.DATATABLE_DATA}/${rowData.id}`;
+                    this.selectedUrl = `${actions.CONSIGNEE_DATA}/${rowData.id}`;
                     this.openAddEditModal();
                 }
             },
@@ -128,12 +128,12 @@
              * confirmed $emit Form confirmation modal
              */
             confirmed() {
-                let url = `${actions.DATATABLE_DATA}/${this.rowData.id}`;
+                let url = `${actions.CONSIGNEE_DATA}/${this.rowData.id}`;
                 this.deleteLoader=true;
                 this.axiosDelete(url)
                     .then(response => {
                         this.deleteLoader= false;
-                        $("#demo-delete").modal('hide');
+                        $("#consignee-delete").modal('hide');
                         this.cancelled();
                         this.$toastr.s(response.data.message);
                     }).catch(({error}) => {

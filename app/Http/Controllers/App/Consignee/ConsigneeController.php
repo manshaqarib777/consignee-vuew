@@ -38,7 +38,7 @@ class ConsigneeController extends Controller
      */
     public function view()
     {
-        return view('demo-crud.index');
+        return view('consignee.index');
     }
 
     /**
@@ -49,11 +49,11 @@ class ConsigneeController extends Controller
      */
     public function store(Request $request)
     {
-        $crud = $this->service->save();
+        $consignee = $this->service->save();
 
         notify()
             ->on('row_created')
-            ->with($crud)
+            ->with($consignee)
             ->send(ConsigneeNotification::class);
 
         return created_responses('data');
@@ -77,13 +77,13 @@ class ConsigneeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consignee $crud)
+    public function update(Request $request, Consignee $consignee)
     {
-        $crud = $this->service->update($crud);
+        $consignee = $this->service->update($consignee);
 
         notify()
             ->on('row_updated')
-            ->with($crud)
+            ->with($consignee)
             ->send(ConsigneeNotification::class);
 
         return updated_responses('data');
@@ -96,13 +96,13 @@ class ConsigneeController extends Controller
      * @return \Illuminate\Http\Response
      * @throws \Exception
      */
-    public function destroy(Consignee $crud)
+    public function destroy(Consignee $consignee)
     {
-        if ($this->service->delete($crud)) {
+        if ($this->service->delete($consignee)) {
 
             notify()
                 ->on('row_deleted')
-                ->with((object)$crud->toArray())
+                ->with((object)$consignee->toArray())
                 ->send(ConsigneeNotification::class);
 
             return deleted_responses('data');

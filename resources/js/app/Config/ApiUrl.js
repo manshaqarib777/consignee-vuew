@@ -50,6 +50,9 @@ export const GET_EMAIL_SETTINGS = '/admin/app/settings/delivery-settings';
 export const DATATABLE_DATA = 'crud';
 export const DATATABLE_SEARCH_SELECT = '/datatable/name';
 
+//Consignee
+export const CONSIGNEE_DATA = 'consignee';
+
 //roles and users
 export const ROLES = 'admin/auth/roles';
 export const USERS = 'admin/auth/users';
