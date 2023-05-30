@@ -469,6 +469,7 @@ return [
     'you_are_invited' => 'You are invited',
 
     // Title
+    'consignee' => 'Consignee',
     'functional' => 'Functional',
     'responsive' => 'Responsive',
     'filter_type' => 'Filter Type',
@@ -732,6 +733,7 @@ return [
 
     // Datatable
     'view_basic_datatable' => 'Can see basic datatable',
+    'manage_consignee_datatable' => 'Can mange consignee datatable',
     'manage_functional_datatable' => 'Can mange functional datatable',
     'manage_advance_datatable' => 'Can manage advance datatable',
     'view_responsive_datatable' => 'Can see responsive datatable',
@@ -816,7 +818,7 @@ return [
     '500_internal_server_error' => '500 - Internal server error',
     '503_service_unavailable' => '503 - Service unavailable',
     //datatable
-    'functional_datatable' => 'Functional Datatable',
+    'consignee_datatable' => 'Consignee Datatable',
     'basic_datatable' => 'Basic Datatable',
     'advance_datatable' => 'Advance Datatable',
     'responsive_datatable' => 'Responsive Datatable',
