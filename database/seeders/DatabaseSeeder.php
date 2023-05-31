@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\App\SamplePage\KanbanView\Stage;
 use App\Models\App\SamplePage\KanbanView\Task;
 use App\Models\App\SamplePage\Report;
+use Database\Seeders\App\CountriesTableSeeder;
 use Database\Seeders\App\CrudTableSeeder;
 use Database\Seeders\App\NotificationChannelTableSeeder;
 use Database\Seeders\App\NotificationEventTableSeeder;
@@ -42,6 +43,7 @@ class DatabaseSeeder extends Seeder
 
         Report::factory(4)->create();
         Stage::factory(7)->has(Task::factory()->count(4))->create();
+        $this->call(CountriesTableSeeder::class);
         $this->call(StatusSeeder::class);
         $this->call(SocialLinkSeeder::class);
         $this->call(TypeSeeder::class);

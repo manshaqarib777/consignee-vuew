@@ -53,6 +53,11 @@ export const DATATABLE_SEARCH_SELECT = '/datatable/name';
 //Consignee
 export const CONSIGNEE_DATA = 'consignee';
 
+//DataTable
+export const ADDRESS_DATA = 'address';
+export const ADDRESS_COUNTRY = '/addresses/country';
+export const ADDRESS_CONSIGNEE = '/addresses/consignee';
+
 //roles and users
 export const ROLES = 'admin/auth/roles';
 export const USERS = 'admin/auth/users';

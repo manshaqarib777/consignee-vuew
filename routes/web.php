@@ -22,6 +22,10 @@ Route::group(['middleware' => ['auth', 'authorize']], function () {
 Route::group(['middleware' => ['auth', 'authorize']], function () {
     include_route_files(__DIR__ . '/consignee/');
 });
+Route::group(['middleware' => ['auth', 'authorize']], function () {
+    include_route_files(__DIR__ . '/address/');
+});
+
 
 Route::get("doc/core/components", [DocumentationController::class,'index']);
 Route::get("doc/core/components/{component_name}", [DocumentationController::class,'show']);

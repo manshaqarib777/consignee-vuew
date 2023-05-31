@@ -8,9 +8,9 @@ use App\Services\App\AppService;
 
 class ConsigneeService extends AppService
 {
-    public function __construct(Consignee $crud)
+    public function __construct(Consignee $consignee)
     {
-        $this->model = $crud;
+        $this->model = $consignee;
     }
 
     /**
@@ -24,28 +24,28 @@ class ConsigneeService extends AppService
 
     /**
      * Update Consignee service
-     * @param Consignee $crud
+     * @param Consignee $consignee
      * @return Consignee
      */
-    public function update(Consignee $crud)
+    public function update(Consignee $consignee)
     {
-        $crud->fill(request()->all());
+        $consignee->fill(request()->all());
 
-        $this->model = $crud;
+        $this->model = $consignee;
 
-        $crud->save();
+        $consignee->save();
 
-        return $crud;
+        return $consignee;
     }
 
     /**
      * Delete Consignee service
-     * @param Consignee $crud
+     * @param Consignee $consignee
      * @return bool|null
      * @throws \Exception
      */
-    public function delete(Consignee $crud)
+    public function delete(Consignee $consignee)
     {
-        return $crud->delete();
+        return $consignee->delete();
     }
 }

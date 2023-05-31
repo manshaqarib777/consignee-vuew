@@ -106,7 +106,7 @@
                     {id: 'female', value: "Female"},
                     {id: 'other', value: "Other"},
                 ],
-                modalId: 'consignee-Modal',
+                modalId: 'consignee-modal',
                 modalTitle: this.$t('add'),
             }
         },
