@@ -61,7 +61,7 @@
                                class="col-sm-9"
                                type="textarea"
                                v-model="inputs.address"
-                               :placeholder="$t('address_type_input')"
+                               :placeholder="$t('text_type_input')"
                                :required="true"/>
                 </div>
                 <div class="form-group row align-items-center">
