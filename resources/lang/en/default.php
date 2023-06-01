@@ -362,4 +362,7 @@ return array_merge([
     'make_stripe_payment' => 'Make Stripe Payment',
     'payment_status' => 'Payment Status',
     'chat' => 'Chat',
+    'view_consignees' => 'Can view consignees',
+    'view_addresses' => 'Can view addresses',
+
 ], include 'custom.php');

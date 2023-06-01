@@ -16,16 +16,16 @@ class SidebarComposer
                 'permission' => authorize_any(['view_default']),
             ],
             [
-                'icon' => 'mail',
-                'name' => trans('custom.addresses'),
-                'url' => '/addresses',
-                'permission' => authorize_any(['view_addresses']),
-            ],
-            [
                 'icon' => 'users',
                 'name' => trans('custom.consignees'),
                 'url' => '/consignees',
                 'permission' => authorize_any(['view_consignees']),
+            ],
+            [
+                'icon' => 'mail',
+                'name' => trans('custom.addresses'),
+                'url' => '/addresses',
+                'permission' => authorize_any(['view_addresses']),
             ],
             // [
             //     'id' => 'dashboard-samples',
