@@ -47,7 +47,7 @@ return [
     'type_contact_number' => 'Type contact number',
     'type_age' => 'Type age',
     'address' => 'Address',
-    'consignees' => 'Consignees',
+    'consignees' => 'Consignors',
     'addresses' => 'Addresses',
     'type_address' => 'Type address',
     'date_of_birth' => 'Date of birth',
